@@ -13,6 +13,9 @@ namespace MOclock2
     {
         private NaveCalendar calendar;
 
+        //State variables
+        private NaveDate currentDate;
+
         public NaveClock(NaveCalendar calendar)
         {
             this.calendar = calendar;
@@ -23,7 +26,7 @@ namespace MOclock2
         /// </summary>
         public TimeSpan currentTime()
         {
-            NaveDate currentDate = calendar.Today;
+            currentDate = calendar.Today;
             TimeSpan result = DateTime.UtcNow - currentDate.DateStart;
             result += new TimeSpan(0,0,1);
             return result;
