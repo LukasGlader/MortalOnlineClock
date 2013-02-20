@@ -1,0 +1,51 @@
+﻿<Window x:Class="MOclock2.AnalogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MO Clock" Height="400" Width="300"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent" Icon="./img/icon.gif">
+    
+    <Grid Name="watchGrid" Width="270" Height="360">
+
+        <Image Source="img/daynightdial.gif" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Name="dayNightDial" Width="170" MouseDown="move_window" Margin="50,145,55,50">
+            <Image.LayoutTransform>
+                <RotateTransform Angle="{Binding Path=DaytimeAngle}"></RotateTransform>
+
+            </Image.LayoutTransform>
+        </Image>
+        <Image Source="img/faceplate.gif" Height="220" HorizontalAlignment="Center" VerticalAlignment="Center" Name="faceplate" Width="220" MouseDown="move_window" Margin="25,115,30,30" />
+        <Image Source="img/hourdial.gif" Height="180" HorizontalAlignment="Center" VerticalAlignment="Center" Name="hourDial" Width="180" MouseDown="move_window" Margin="44,140,45,46">
+            <Image.LayoutTransform>
+                <RotateTransform Angle="{Binding Path=HourAngle}"></RotateTransform>
+
+            </Image.LayoutTransform>
+        </Image>
+
+        <Image Source="img/monthdial.gif" Height="210" HorizontalAlignment="Center" VerticalAlignment="Center" Name="monthDial" Width="210" MouseDown="move_window" Margin="30,125,30,30">
+            <Image.LayoutTransform>
+                <RotateTransform Angle="{Binding Path=YearAngle}"></RotateTransform>
+
+            </Image.LayoutTransform>
+        </Image>
+
+        <Image Source="img/case.gif" Height="360" HorizontalAlignment="Center" VerticalAlignment="Center" Name="mainImage" Width="270" MouseDown="move_window" />
+        <Image Source="img/complicationhand.gif" Name="complicationArm" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50" Margin="167,201,53,115" MouseDown="move_window">
+            <Image.LayoutTransform>
+                <RotateTransform Angle="{Binding Path=MinuteAngle}"></RotateTransform>
+
+            </Image.LayoutTransform>
+        </Image>
+
+
+        <Button Content="X"  Height="19" HorizontalAlignment="Right" Name="button_close" VerticalAlignment="Top" Width="20" FontFamily="Courier" 
+          FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" 
+          FontStretch="Normal" Visibility="Visible" 
+          FontSize="16" Padding="0" ToolTip="Close" Click="button_close_Click" Margin="0,12,12,0" />
+        <Button Content="D"  Height="19" HorizontalAlignment="Right" Margin="0,12,38,0" 
+          Name="button_switch" VerticalAlignment="Top" Width="20" FontFamily="Courier" 
+          FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" 
+          FontStretch="Normal" Visibility="Visible" 
+          FontSize="16" Padding="0" ToolTip="Digital Mode" Click="button_switch_gui" />
+        
+    </Grid>
+</Window>

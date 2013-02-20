@@ -1,0 +1,38 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MOclock2.DigitalWindow"
+        xmlns:local="clr-namespace:MOclock2"
+        Title="DigitalWindow" Height="196" Width="337" ResizeMode="NoResize"
+        Icon="./img/icon.gif">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Date:" HorizontalAlignment="Left" Name="dateLabel" VerticalAlignment="Center" />
+            <TextBlock Name="dateField" Text="{Binding Path=CurrentNaveDate}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="160" />
+            <Button Content="A" Height="23" Name="analogSwitch" Width="26" Click="analogSwitch_Click" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Time:" HorizontalAlignment="Left" Name="timeLabel" VerticalAlignment="Center" />
+            <TextBlock Name="timeField" Text="{Binding Path=CurrentNaveTime}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="It's currently:" HorizontalAlignment="Left" Name="todLabel" VerticalAlignment="Center" />
+            <TextBlock HorizontalAlignment="Left" Name="TODField" Text="{Binding Path=TOD}" VerticalAlignment="Center" Width="75" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Next sunrise:" HorizontalAlignment="Left" Name="sunriseLabel" VerticalAlignment="Center" />
+            <TextBlock HorizontalAlignment="Left" Name="sunriseField" Text="{Binding Path=Sunrise}" VerticalAlignment="Center" Width="180" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Next sunset:" HorizontalAlignment="Left" Name="sunsetLabel" VerticalAlignment="Center" />
+            <TextBlock HorizontalAlignment="Left" Name="sunsetField" Text="{Binding Path=Sunset}" VerticalAlignment="Center" Width="180" />
+        </StackPanel>
+
+        <Expander Header="More Options">
+            <StackPanel>
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</Window>
